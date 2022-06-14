@@ -6,13 +6,15 @@ let toShow=[];
 const inOptions =(props)=>{
     if(props.data!==undefined && props.data!==null){
         
-        toShow=Object.keys(props.data).map(name=>{
-            let cnt=props.data[name].content!==undefined?props.data[name].content:null;
-            let img=props.data[name].image!==undefined?props.data[name].image:"https://media.timeout.com/images/103462914/image.jpg";
-           return (<Col key={name}>
-           <Inoption add={props.adding}  head={name} image={img} price={props.data[name].price} content={cnt} />
+        toShow=Object.keys(props.data).map(id=>{
+            let cnt=props.data[id].description!==undefined?props.data[id].description:null;
+            let img=props.data[id].imgPath!==undefined?props.data[id].imgPath:"https://media.timeout.com/images/103462914/image.jpg";
+            if(props.data[id].category === props.selected) {
+           return (<Col key={id}>
+           <Inoption add={props.adding}  head={props.data[id].name} image={img} price={props.data[id].price} content={cnt} />
            </Col>
-        )
+            )
+           }
         })
     }
     return(

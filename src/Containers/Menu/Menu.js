@@ -9,12 +9,15 @@ class Menu extends Component{
         let dtr=this.props.loaded?(
             <div>
                 
-                {/* <Backdrop click={()=>console.log("clicked")}/> */}
-                <Menuheader data={this.props.data} adding={this.props.adding()}>
+            {/* <Backdrop click={()=>console.log("clicked")}/> */}
+            <Menuheader menudata={this.props.menudata} data={this.props.data} adding={this.props.adding()}>
+                    
             <Toolbar count={this.props.inbox} />
-            </Menuheader>
+            </Menuheader> 
+            
             </div>
         ):null;
+
         return(
             <div>
                 {dtr}

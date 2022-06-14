@@ -19,7 +19,7 @@ const menuHeader=(props)=>{
         </ul>
         </section>
         <section className="menu-options">
-            <MenuAll adding={props.adding} data={props.data}/>
+            <MenuAll adding={props.adding} data={props.data} menudata={props.menudata}/>
         </section>
         <Footer/>
         </div>

@@ -22,12 +22,15 @@ class menuAll extends Component {
     }
     loadStateHandler=(name)=>{
         
-        this.setState({load:name,sendData:this.props.data[name]});
+        this.setState({load:name,sendData:this.props.menudata});
       
     }
     render() {
-        
-        let opn = Object.keys(this.props.data).map(data => <Single  name={data} click={this.loadStateHandler}  key={data} />);
+        //let menuitems = this.props.menudata.map(item => <Single name={item.category} key={item.category} click={this.loadStateHandler} />);
+        let menuitems = Object.keys(this.props.menudata).map(id => <Single name={this.props.menudata[id].category} key={this.props.menudata[id].id} click={this.loadStateHandler} />);
+        //var arr = removeDuplicatesBy(x => x.price, menuitems);
+        //menuitems.filter((v,i,a)=>a.findIndex(v2=>(v2.category===v.category))===i.cat);
+        //let opn = Object.keys(this.props.data).map(data => <Single  name={data} click={this.loadStateHandler}  key={data} />);
         let customize=(
             <div>
             <Backdrop click={this.closeCustomizationHandler} />
@@ -86,8 +89,9 @@ class menuAll extends Component {
         let custResult=this.state.showCustomize?customize:null;
         let outPut=(
             <div className="menuAll">
-            {opn}
-            <Inoptions adding={this.props.adding} selected={this.state.load} data={this.state.sendData} customization={this.openCustomizeHandler} check={opn} />
+            {/*opn*/}
+            {menuitems}
+            <Inoptions adding={this.props.adding} selected={this.state.load} data={this.state.sendData} customization={this.openCustomizeHandler} check={menuitems} />
             {custResult}
         </div>
         );

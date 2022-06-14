@@ -12,12 +12,18 @@ class allClass extends Component{
     state={
         item:[],
         data:[],
+        menudata:[],
         loaded:false
       };
       componentDidMount(){
         axios.get("https://twobrother0927.firebaseio.com/.json").then((data)=>{
             this.setState({data:data.data,loaded:true});
+            console.log(this.data);
         }).catch(err=>console.log("Some Error")).then(console.log("Lets trye this "));
+        axios.get("http://localhost:8080/api/menu").then((response)=>{
+            this.setState({menudata:response.data});
+            console.log(this.menudata);
+        }).catch(err=>console.log("Didn't load")).then(console.log("Unable to get data for menu"));
       }
       addItem=(obj)=>{
           let extra=[...this.state.item];
@@ -67,7 +73,7 @@ class allClass extends Component{
             <Switch>
                 <Route path="/offers" component={()=><Offer count={this.state.item.length} data={this.state.data.offers.offer} board={this.state.data.offers.board}/>}/>
    <Route path="/cart" component={()=><Cart adding={()=>this.addItem} remove={()=>this.removeItem} data={this.state.item}/> }/>
-   <Route path="/menu" component={()=><Menu inbox={this.state.item.length} data={this.state.data.menu} loaded={this.state.loaded} adding={()=>this.addItem}/>}/>
+   <Route path="/menu" component={()=><Menu inbox={this.state.item.length} data={this.state.data.menu} menudata={this.state.menudata} loaded={this.state.loaded} adding={()=>this.addItem}/>}/>
    <Route path="/order" component={()=><Order count={this.state.item.length} data={this.state.item}/>}/>
    <Route path="/login" component={()=><Login count={this.state.item.length} data={this.state.item}/>}/>
    <Route path="/" component={()=><Home count={this.state.item.length} data={this.state.data.offers.home}/>}/>
