@@ -6,6 +6,7 @@ import menu from '../../../Assests/icons/menu.png';
 import home from '../../../Assests/icons/home.png';
 import delivery from '../../../Assests/icons/delivery.png';
 import contact from '../../../Assests/icons/contact.png';
+import login from '../../../Assests/icons/login.png'
 import offer from '../../../Assests/icons/offer.png';
 import cart from '../../../Assests/icons/cart.png';
 import convo from '../../../Assests/icons/convo.png';
@@ -71,8 +72,8 @@ class toolbar extends Component {
                                 </Col>
                                 <Col>
                                     <div className="toolbar">
-                                        <img src={contact} alt="Menu Opening Icon" />
-                                        <Link to="#footer"><p>Contact</p></Link>
+                                        <img src={login} alt="Menu Opening Icon" />
+                                        <Link to="/login"><p>Sign Up / Login</p></Link>
                                     </div>
                                 </Col>
                                 <Col xs="4">
