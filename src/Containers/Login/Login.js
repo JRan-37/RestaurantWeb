@@ -5,46 +5,36 @@ import axios from 'axios';
 import Toolbar from '../../Components/navigation/toolbar/toolbar';
 import { NavLink } from 'react-router-dom';
 import Items from '../../Components/Order/Items/Items';
-import Form from '../../Components/Order/orderForm/orderForm';
+import Form from '../../Components/loginform/loginForm';
+import Register from '../../Components/registerform/registerForm';
 import Footer from '../../Components/navigation/footer/footer';
 class Login extends Component {
 
-    placeOrder = (obj) => {
-            var copy = {
-                ...obj, food: this.props.data, time: new Date().toString(), user: {
-                  geo:{lat:0,long:0},
-                  more:window.navigator.userAgent
-                }
-            };
-            navigator.geolocation.getCurrentPosition(data=>{
-                copy.user.geo.lat=data.coords.latitude;
-                copy.user.geo.long=data.coords.longitude
-            });
-            if (this.props.data.length > 0) {
-                axios.post("https://twobrother0927.firebaseio.com/.json", copy).then(()=>alert("Your Order is Placed!"));
-            }
-            else {
-                alert("Please select some items from Menu first");
-            }
-        }
-    
-    logIn = (obj) => {
-        var copy = {
-            ...obj, food: this.props.data, time: new Date().toString(), user: {
-                geo:{lat:0,long:0},
-                more:window.navigator.userAgent
-            }
+    logIn = (name, pass) => {
+        var user = {
+            username:name,
+            password:pass
         };
-        navigator.geolocation.getCurrentPosition(data=>{
-            copy.user.geo.lat=data.coords.latitude;
-            copy.user.geo.long=data.coords.longitude
+        axios.post("http://localhost:8080/authenticate", user).then(response => {
+            localStorage.setItem("user", JSON.stringify(response.data));
+            alert("User data saved to storage");
         });
-        if (this.props.data.length > 0) {
-            axios.post("https://twobrother0927.firebaseio.com/.json", copy).then(()=>alert("Your Order is Placed!"));
-        }
-        else {
-            alert("Please select some items from Menu first");
-        }
+
+    }
+    
+    reg = (name, pass, mail) => {
+        var user = {
+            username:name,
+            password: pass,
+            email: mail,
+            date: new Date().toString()
+        };
+
+        axios.post("http://localhost:8080/register", user).then(response => {
+            let message = response.data.message;
+            alert(message);
+        });
+
     }
 
 
@@ -56,10 +46,10 @@ class Login extends Component {
                         <p className="OrderHead">Login / Sign Up</p>
                     </section>
                     <section className="order-sec">
-                        <Form login={this.logIn} />
+                        <Form place={this.logIn} />
                     </section>
                     <section className="order-sec">
-                        <Form place={this.placeOrder} />
+                        <Register place={this.reg} />
                     </section>
                     <Footer />
                 </div>
