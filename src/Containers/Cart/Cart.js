@@ -41,7 +41,7 @@ class Cart extends Component {
                         
                     </section>
                     <section className="cartTotal">
-                    <p >You Total : &#8377; {k}</p>
+                    <p >Your Total : $ {k}</p>
                     <Button url="/order" content="Order Now"/>
                     </section>
                     <Footer />

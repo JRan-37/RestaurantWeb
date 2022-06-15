@@ -7,21 +7,28 @@ import { NavLink } from 'react-router-dom';
 import Items from '../../Components/Order/Items/Items';
 import Form from '../../Components/Order/orderForm/orderForm';
 import Footer from '../../Components/navigation/footer/footer';
-class OrderOnlinem extends Component {
+class OrderOnline extends Component {
 
     placeOrder = (obj) => {
-            var copy = {
-                ...obj, food: this.props.data, time: new Date().toString(), user: {
-                  geo:{lat:0,long:0},
-                  more:window.navigator.userAgent
-                }
-            };
-            navigator.geolocation.getCurrentPosition(data=>{
-                copy.user.geo.lat=data.coords.latitude;
-                copy.user.geo.long=data.coords.longitude
-            });
+
+            let date = new Date();
+            let month = date.getMonth();
+            let day = date.getDay();
+            let year = date.getFullYear();
+
+            let total = this.props.data[0].price;
+
+            let copy = {
+                date : month + "/" + day + "/" + year,
+                price : total,
+                username : "joejoe1",
+                menuId : this.props.data[0].id
+            }
+
+            console.log(this.props.data);
+            
             if (this.props.data.length > 0) {
-                axios.post("https://twobrother0927.firebaseio.com/.json", copy).then(()=>alert("Your Order is Placed!"));
+                axios.post("http://localhost:8080/purchase", copy).then(()=>alert("Your Order is Placed!"));
             }
             else {
                 alert("Please select some items from Menu first");
@@ -52,4 +59,4 @@ class OrderOnlinem extends Component {
             );
         }
     }
-    export default OrderOnlinem;
+    export default OrderOnline;

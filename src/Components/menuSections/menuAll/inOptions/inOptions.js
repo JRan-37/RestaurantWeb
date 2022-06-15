@@ -9,9 +9,10 @@ const inOptions =(props)=>{
         toShow=Object.keys(props.data).map(id=>{
             let cnt=props.data[id].description!==undefined?props.data[id].description:null;
             let img=props.data[id].imgPath!==undefined?props.data[id].imgPath:"https://media.timeout.com/images/103462914/image.jpg";
+            let menuId=props.data[id].id!==undefined?props.data[id].id:null;
             if(props.data[id].category === props.selected) {
            return (<Col key={id}>
-           <Inoption add={props.adding}  head={props.data[id].name} image={img} price={props.data[id].price} content={cnt} />
+           <Inoption add={props.adding}  head={props.data[id].name} image={img} price={props.data[id].price} content={cnt} id={menuId} />
            </Col>
             )
            }

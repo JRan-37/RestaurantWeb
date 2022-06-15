@@ -67,7 +67,7 @@ class  orderForm extends Component{
                     <Row>
                         <Col xs="4" xl="4">
                             <legend>
-                                <p>Locality</p>
+                                <p>Address 2</p>
                             </legend>
                         </Col>
                         <Col xs="8" xl="8">
@@ -77,7 +77,7 @@ class  orderForm extends Component{
                     <Row>
                         <Col xs="4" xl="4">
                             <legend>
-                                <p>Landmark</p>
+                                <p>City</p>
                             </legend>
                         </Col>
                         <Col xs="8" xl="8">
@@ -87,7 +87,7 @@ class  orderForm extends Component{
                     <Row>
                         <Col xs="4" xl="4">
                             <legend>
-                                <p>Pin Code</p>
+                                <p>State</p>
                             </legend>
                         </Col>
                         <Col xs="8" xl="8">
@@ -97,7 +97,7 @@ class  orderForm extends Component{
                     <Row>
                         <Col xs="4" xl="4">
                             <legend>
-                                <p>Number</p>
+                                <p>Zip Code</p>
                             </legend>
                         </Col>
                         <Col xs="8" xl="8">

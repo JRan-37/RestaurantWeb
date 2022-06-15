@@ -26,6 +26,8 @@ class Offer extends Component {
     }
 
     render() {
+
+        
         let temp;
     const extractor=(obj)=>{
          temp=Object.keys(obj).map(name=>obj[name]);

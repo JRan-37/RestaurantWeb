@@ -81,7 +81,7 @@ class toolbar extends Component {
                                         <Col xs="8">
                                             <div className="toolbar" >
 
-                                                <p className="number"><img className="convo" src={convo} alt="Conversation " />9936657710</p>
+                                                <p className="number"><img className="convo" src={convo} alt="Conversation " />(123) 456-7890</p>
                                             </div>
                                         </Col>
                                         <Col >
@@ -166,7 +166,7 @@ class toolbar extends Component {
                                     </Col>
                                     <Col>
                                     <div className="linkContainer">
-                                        <Link to="/offers">Offers</Link>
+                                        <Link to="/offers">Rewards</Link>
                                         </div>
                                     </Col>
                                 </Row>
