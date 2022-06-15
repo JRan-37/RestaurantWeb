@@ -6,6 +6,7 @@ import {Container,Row,Col} from 'reactstrap';
 import Tile from '../../Components/sections/section-tiles/tile/tile';
 import Flip from '../../Components/miscelleous/flip-card/flip-card';
 import Footer from '../../Components/navigation/footer/footer';
+import axios from 'axios';
 
 class Offer extends Component {
     render() {
@@ -18,11 +19,17 @@ class Offer extends Component {
             <div className="Offer">
                 <section className="Offers">
                     <Toolbar count={this.props.count} />
-                    <p className="OffersHead">Offers</p>
+                    <p className="OffersHead">Rewards</p>
                     <div>
-                        <NavLink to="/">Home</NavLink>
+                        {/* {console.log(axios.get("http://localhost:8080/rewards").then(Response.data))} */}
+
+                        {/* <NavLink to="/">Home</NavLink>
                         <NavLink exact to="/menu">Menu</NavLink>
-                        <NavLink to="/offers">Offers</NavLink>
+                        <NavLink to="/offers">Offers</NavLink> */}
+
+                        {/* you would have to have the spring boot application running concurrently on your computer... 
+                        then the http address for the call would be http://localhost:8080/api/menu  or 
+                        http://localhost:8080/rewards later on once that functionality gets added */}
                     </div>
                 </section>
                 <section style={{marginTop:"40px"}}>

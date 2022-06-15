@@ -67,7 +67,7 @@ class toolbar extends Component {
                                 <Col>
                                     <div className="toolbar">
                                         <img src={offer} alt="Menu Opening Icon" />
-                                        <Link to="/offers"><p>Offer</p></Link>
+                                        <Link to="/offers"><p>Rewards</p></Link>
                                     </div>
                                 </Col>
                                 <Col>
