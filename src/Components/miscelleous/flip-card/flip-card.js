@@ -9,7 +9,7 @@ const flip_card = (props) => {
                 <div className="flip-card-front">
                 {props.front}
                     <div>
-                    <h1>The new trend of fooding in kanpur</h1>
+                    <h1>The best food you'll ever eat</h1>
                     <div style={{marginTop:"13%",backgroundColor:"#242424",opacity:0.8,display:"inline-block",padding:"10px 10px"}}>
                         <h2>Feel the taste like never before</h2>
                         

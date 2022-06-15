@@ -41,3 +41,7 @@ input[select]{
     box-shadow: 0 10px 10px #d93800;
 
 }
+
+.spacer {
+    margin-top: 65px;
+}

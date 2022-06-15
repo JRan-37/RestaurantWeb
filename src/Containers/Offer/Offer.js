@@ -14,13 +14,14 @@ class Offer extends Component {
         categories: [],
         options: [],
         load: "Select From Above",
+        rewardData: [],
         showCustomize: false,
         sendData: {}
     }
     componentDidMount() {
-        axios.get("http://localhost:8081/rewards").then((response) => {
-            this.setState({menudata:response.data});
-            console.log(this.menudata);
+        axios.get("http://localhost:8080/rewards").then((response) => {
+            this.setState({rewardData:response.data});
+            console.log(this.rewardData);
         }).catch(err=>console.log("Didn't load")).then(console.log("Unable to get data for menu categories"));
     }
 
@@ -36,7 +37,6 @@ class Offer extends Component {
                     <Toolbar count={this.props.count} />
                     <p className="OffersHead">Rewards</p>
                     <div>
-                        menudata
                         {/* <NavLink to="/">Home</NavLink>
                         <NavLink exact to="/menu">Menu</NavLink>
                         <NavLink to="/offers">Offers</NavLink> */}
@@ -49,13 +49,13 @@ class Offer extends Component {
                 <section style={{marginTop:"40px"}}>
                     <Container>
                         <Row>
-                           {temp.map(each=><Col key={each.head}><Tile url="/menu" button="Visit Menu" head={each.head} content={each.content} key={each.head} back={each.back} /></Col>)}
+                           {this.state.rewardData.map(each=><Col key={each.id}><Tile url="/menu" button="Visit Menu" head={each.rewardName} content={each.rewardDescription} /></Col>)}
                         </Row>
                     </Container>
                 </section>
-                <section style={{marginTop:"40px"}}>
-                    <Flip lis={this.props.board}/>
-                </section>
+                <div className="spacer">
+                    
+                </div>
                 <Footer count={this.props.count}/>
             </div>
         );

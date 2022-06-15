@@ -30,9 +30,6 @@ const tile=(props)=>{
         <div className={classnm.join(" ")}>
             <p className="titleHead">{props.head}</p>
             <p className="titleContent">{props.content}</p>
-            <div className="titleButton">
-                <Button url={props.url} content={props.button}/>
-            </div>
         </div>
     );
 }

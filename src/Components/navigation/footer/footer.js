@@ -13,14 +13,6 @@ const footer = () => {
             <Container>
                 <Row>
                     <Col>
-                        <div className="storage">
-                            <a href='/'>About Us</a>
-                            <a href="/">Blog</a>
-                            <a href="/">Pages</a>
-                            <a href="/">Map</a>
-                        </div>
-                    </Col>
-                    <Col>
                         <div className="storage2">
                             <a href="/" ><img src={insta} alt="Icon" /></a>
                             <a href="/" ><img src={fb} alt="Icon" /></a>
@@ -32,9 +24,9 @@ const footer = () => {
                 </Row>
                 <Row>
                     <Col>
-                        <p className="footer-text">Contact: 9936657710<br />Order: 9670300800, 9670400900, 9670800100 <br />
+                        <p className="footer-text">Contact: (123) 456-7890<br />
                             &copy; COPYRIGHT 2018 reserved by 2 Brother Pizza and Burger<br /><br/>
-                            Made with <img src={heart} alt="Heart" style={{ height: "22px", padding: "0 3px", float: "none" }} /> from <a style={{ display: "inline", float: "none" }} href="https://www.wordpress.com">Aashish Peepra aka Iron Programmer (Love Aashiya)</a></p>
+                            </p>
                     </Col>
                 </Row>
             </Container>
