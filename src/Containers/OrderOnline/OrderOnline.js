@@ -12,20 +12,23 @@ class OrderOnline extends Component {
     placeOrder = (obj) => {
 
             let date = new Date();
-            let month = date.getMonth();
-            let day = date.getDay();
+            let month = date.getMonth() + 1;
+            let day = date.getDate();
             let year = date.getFullYear();
 
-            let total = this.props.data[0].price;
+            let total = 0;
+            this.props.data.map(item => total += item.price);
+            let menuItems = [];
+            this.props.data.map(item => menuItems.push(item.id));
 
             let copy = {
                 date : month + "/" + day + "/" + year,
                 price : total,
-                username : "joejoe1",
-                menuId : this.props.data[0].id
+                username : JSON.parse(localStorage.getItem("user")).username,
+                menuIds : menuItems
             }
 
-            console.log(this.props.data);
+            console.log(copy);
             
             if (this.props.data.length > 0) {
                 axios.post("http://localhost:8080/purchase", copy).then(()=>alert("Your Order is Placed!"));

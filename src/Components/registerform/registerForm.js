@@ -55,7 +55,7 @@ class  orderForm extends Component{
                             </legend>
                         </Col>
                         <Col xs="8" xl="8">
-                        <input type="text" value={this.state.password} onChange={this.passHandler} id="Pass"/>
+                        <input type="password" value={this.state.password} onChange={this.passHandler} id="Pass"/>
                         </Col>
                     </Row>
                 </Container>
