@@ -9,6 +9,21 @@ import Footer from '../../Components/navigation/footer/footer';
 import axios from 'axios';
 
 class Offer extends Component {
+
+    state ={
+        categories: [],
+        options: [],
+        load: "Select From Above",
+        showCustomize: false,
+        sendData: {}
+    }
+    componentDidMount() {
+        axios.get("http://localhost:8081/rewards").then((response) => {
+            this.setState({menudata:response.data});
+            console.log(this.menudata);
+        }).catch(err=>console.log("Didn't load")).then(console.log("Unable to get data for menu categories"));
+    }
+
     render() {
         let temp;
     const extractor=(obj)=>{
@@ -21,8 +36,7 @@ class Offer extends Component {
                     <Toolbar count={this.props.count} />
                     <p className="OffersHead">Rewards</p>
                     <div>
-                        {/* {console.log(axios.get("http://localhost:8080/rewards").then(Response.data))} */}
-
+                        menudata
                         {/* <NavLink to="/">Home</NavLink>
                         <NavLink exact to="/menu">Menu</NavLink>
                         <NavLink to="/offers">Offers</NavLink> */}
