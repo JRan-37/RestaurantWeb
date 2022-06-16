@@ -20,9 +20,14 @@ class Offer extends Component {
         sendData: {}
     }
     componentDidMount() {
-
         let user = {
-            username: JSON.parse(localStorage.getItem("user")).username
+            username: null,
+        }
+
+        try {
+            this.setState({username:JSON.parse(localStorage.getItem("user")).username});
+        } catch (error) {
+            
         }
 
         axios.post("http://localhost:8080/rewards", user).then((response) => this.setState({ rewardData: response.data }));
@@ -32,9 +37,7 @@ class Offer extends Component {
     render() {
 
         if (localStorage.getItem("user") === null) {
-            return (
-                <Login />
-            );
+            window.location.href='/';
         } else {
 
 
