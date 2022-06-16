@@ -17,6 +17,7 @@ class toolbar extends Component {
         show: false,
         short: ["contentTool"]
     }
+
     render() {
         let count;
         if (this.props.count === undefined) {
@@ -39,6 +40,108 @@ class toolbar extends Component {
 
         }
         const t_ext = "t-ext" + ext;
+
+        let rewardsMenu = (
+            <Col>
+                <div className="toolbar">
+                    <img src={offer} alt="Menu Opening Icon" />
+                    <Link to="/rewards"><p>Rewards</p></Link>
+                </div>
+            </Col>
+        );
+
+        let loginMenu = (
+            <Col>
+                <div className="toolbar">
+                    <img src={login} alt="Menu Opening Icon" />
+                    <Link to="/login"><p>Sign Up / Login</p></Link>
+                </div>
+            </Col>
+        );
+
+        let accountMenu = (
+            <Col>
+                <div className="toolbar">
+                    <img src={login} alt="Menu Opening Icon" />
+                    <Link to="/login"><p>Account</p></Link>
+                </div>
+            </Col>
+        );
+
+        let smallRewards = (
+            <Link to="/rewards">
+                <div className="eachOne">
+                    <Row>
+                        
+                        <Col>
+                            <div className="smallImgBox">
+                                <img src={offer} alt="An Icon" />
+                            </div>
+                        </Col>
+                        <Col>
+                        <div className="linkContainer">
+                            <Link to="/rewards">Rewards</Link>
+                            </div>
+                        </Col>
+                    </Row>
+                </div>
+            </Link>
+        );
+
+        let smallLogin = (
+            <Link to="/login">
+                <div className="eachOne">
+                    <Row>
+                        
+                        <Col>
+                            <div className="smallImgBox">
+                                <img src={login} alt="An Icon" />
+                            </div>
+                        </Col>
+                        <Col>
+                        <div className="linkContainer">
+                            <Link to="/login">Sign Up / Login</Link>
+                            </div>
+                        </Col>
+                    </Row>
+                </div>
+            </Link>
+        );
+
+        let smallAccount = (
+            <Link to="/account">
+                <div className="eachOne">
+                    <Row>
+                        
+                        <Col>
+                            <div className="smallImgBox">
+                                <img src={login} alt="An Icon" />
+                            </div>
+                        </Col>
+                        <Col>
+                        <div className="linkContainer">
+                            <Link to="/account">Account</Link>
+                            </div>
+                        </Col>
+                    </Row>
+                </div>
+            </Link>
+        );
+
+        let optionals = [];
+        let smallOptionals = [];
+
+        if(localStorage.getItem("signedIn") === "true") {
+            optionals.push(rewardsMenu);
+            optionals.push(accountMenu);
+            smallOptionals.push(smallRewards);
+            smallOptionals.push(smallAccount);
+        }
+        else {
+            optionals.push(loginMenu);
+            smallOptionals.push(smallLogin);
+        }
+
         return (
             <header>
                 <nav>
@@ -64,18 +167,8 @@ class toolbar extends Component {
                                     </div>
                                 </Col>
 
-                                <Col>
-                                    <div className="toolbar">
-                                        <img src={offer} alt="Menu Opening Icon" />
-                                        <Link to="/offers"><p>Rewards</p></Link>
-                                    </div>
-                                </Col>
-                                <Col>
-                                    <div className="toolbar">
-                                        <img src={login} alt="Menu Opening Icon" />
-                                        <Link to="/login"><p>Sign Up / Login</p></Link>
-                                    </div>
-                                </Col>
+                                {optionals}
+
                                 <Col xs="4">
                                     <Row>
                                         <Col xs="8">
@@ -144,7 +237,7 @@ class toolbar extends Component {
                                     
                                     <Col>
                                         <div className="smallImgBox">
-                                            <img src={offer} alt="An Icon" />
+                                            <img src={delivery} alt="An Icon" />
                                         </div>
                                     </Col>
                                     <Col>
@@ -155,23 +248,9 @@ class toolbar extends Component {
                                 </Row>
                                 </div>
                                 </Link>
-                                <Link to="/offers">
-                                <div className="eachOne">
-                                <Row>
-                                    
-                                    <Col>
-                                        <div className="smallImgBox">
-                                            <img src={contact} alt="An Icon" />
-                                        </div>
-                                    </Col>
-                                    <Col>
-                                    <div className="linkContainer">
-                                        <Link to="/offers">Rewards</Link>
-                                        </div>
-                                    </Col>
-                                </Row>
-                                </div>
-                                </Link>
+                                
+                                {smallOptionals}
+
                                 <Link to="/cart">
                                 <div className="eachOne">
                                 <Row>
@@ -189,23 +268,22 @@ class toolbar extends Component {
                                 </Row>
                                 </div>
                                 </Link>
-                                <Link to="/footer">
                                 <div className="eachOne">
                                 <Row>
                                     
                                     <Col>
                                         <div className="smallImgBox">
                                             <img src={contact} alt="An Icon" />
+                                            
                                         </div>
                                     </Col>
                                     <Col>
                                     <div className="linkContainer">
-                                        <Link to="#footer">Contact</Link>
+                                            <Link to="/">(123) 456-7890</Link>
                                         </div>
                                     </Col>
                                 </Row>
                                 </div>
-                                </Link>
                             </Container>
                             
                         </div>
