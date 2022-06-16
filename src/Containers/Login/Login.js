@@ -17,6 +17,7 @@ class Login extends Component {
         };
         axios.post("http://localhost:8080/authenticate", user).then(response => {
             localStorage.setItem("user", JSON.stringify(response.data));
+            localStorage.setItem("signedIn", "true");
             alert(localStorage.getItem("user"));
         }).catch(err=>alert("Invalid Login Information"));
 
