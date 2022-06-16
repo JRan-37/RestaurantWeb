@@ -30,7 +30,7 @@ class OrderOnline extends Component {
                 menuIds : menuItems
             }
 
-            console.log(filteredCart);
+            console.log(copy);
             
             if (filteredCart.length > 0) {
                 axios.post("http://localhost:8080/purchase", copy).then(()=>alert("Your Order is Placed!"));

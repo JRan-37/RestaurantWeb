@@ -22,7 +22,6 @@ class allClass extends Component{
         }).catch(err=>console.log("Some Error")).then(console.log("Lets trye this "));
         axios.get("http://localhost:8080/api/menu").then((response)=>{
             this.setState({menudata:response.data});
-            console.log(this.menudata);
         }).catch(err=>console.log("Didn't load")).then(console.log("Unable to get data for menu"));
       }
       addItem=(obj)=>{
@@ -38,8 +37,6 @@ class allClass extends Component{
           if(!check){
             extra.push(obj);
           }
-          
-        console.log(obj);
 
           this.setState({item:extra});
           

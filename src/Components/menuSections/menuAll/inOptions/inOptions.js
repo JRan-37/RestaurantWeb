@@ -6,8 +6,6 @@ let toShow=[];
 const inOptions =(props)=>{
 
     if(props.data!==undefined && props.data!==null){
-        
-        console.log(props.data);
 
         toShow=Object.keys(props.data).map(id=>{
             let cnt=props.data[id].description!==undefined?props.data[id].description:null;
