@@ -63,7 +63,7 @@ class toolbar extends Component {
             <Col>
                 <div className="toolbar">
                     <img src={login} alt="Menu Opening Icon" />
-                    <Link to="/login"><p>Account</p></Link>
+                    <Link to="/account"><p>Account</p></Link>
                 </div>
             </Col>
         );
