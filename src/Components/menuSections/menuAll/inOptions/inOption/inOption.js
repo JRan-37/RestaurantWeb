@@ -18,7 +18,7 @@ const inOption = (props) => {
        
        
         <button type="button" className="inOpButton" onClick={()=>props.add({id: props.id,head:props.head,counter:1,url:props.image,price:props.price,content:props.content})} >Add to Cart</button>
-        <NavLink to="/order" onClick={()=>props.add({id: props.key,head:props.head,counter:1,url:props.image,price:props.price,content:props.content})}>Order Now</NavLink>
+        <NavLink to="/order" onClick={()=>props.add({id: props.id,head:props.head,counter:1,url:props.image,price:props.price,content:props.content})}>Order Now</NavLink>
     </div>
     );
     let result =props.check!==null?value:null;
