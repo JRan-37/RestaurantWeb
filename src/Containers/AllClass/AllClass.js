@@ -39,6 +39,8 @@ class allClass extends Component{
             extra.push(obj);
           }
           
+        console.log(obj);
+
           this.setState({item:extra});
           
           alert(`${obj.head} is added to your cart`);
