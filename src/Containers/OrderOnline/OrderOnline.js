@@ -16,10 +16,12 @@ class OrderOnline extends Component {
             let day = date.getDate();
             let year = date.getFullYear();
 
+            let filteredCart = this.props.data.filter(element => element.counter > 0);
+
             let total = 0;
-            this.props.data.map(item => total += item.price);
+            filteredCart.map(item => total += item.price);
             let menuItems = [];
-            this.props.data.map(item => menuItems.push(item.id));
+            filteredCart.map(item => menuItems.push(item.id));
 
             let copy = {
                 date : month + "/" + day + "/" + year,
@@ -28,9 +30,9 @@ class OrderOnline extends Component {
                 menuIds : menuItems
             }
 
-            console.log(copy);
+            console.log(filteredCart);
             
-            if (this.props.data.length > 0) {
+            if (filteredCart.length > 0) {
                 axios.post("http://localhost:8080/purchase", copy).then(()=>alert("Your Order is Placed!"));
             }
             else {
