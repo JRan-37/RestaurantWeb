@@ -19,7 +19,7 @@ class OrderOnline extends Component {
             let filteredCart = this.props.data.filter(element => element.counter > 0);
 
             let total = 0;
-            filteredCart.map(item => total += item.price);
+            filteredCart.map(item => total += item.price * item.counter);
             let menuItems = [];
             filteredCart.map(item => menuItems.push(item.id));
 
