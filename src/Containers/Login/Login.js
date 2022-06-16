@@ -19,8 +19,10 @@ class Login extends Component {
             localStorage.setItem("user", JSON.stringify(response.data));
             localStorage.setItem("signedIn", "true");
             alert(localStorage.getItem("user"));
+            window.location.href='/';
         }).catch(err=>alert("Invalid Login Information"));
 
+        
     }
     
     reg = (name, pass, mail) => {
