@@ -17,8 +17,8 @@ class Login extends Component {
         };
         axios.post("http://localhost:8080/authenticate", user).then(response => {
             localStorage.setItem("user", JSON.stringify(response.data));
-            alert("User data saved to storage");
-        });
+            alert(localStorage.getItem("user"));
+        }).catch(err=>alert("Invalid Login Information"));
 
     }
     
@@ -32,7 +32,7 @@ class Login extends Component {
 
         axios.post("http://localhost:8080/register", user).then(response => {
             let message = response.data.message;
-            alert(message);
+            alert("Account Created");
         });
 
     }

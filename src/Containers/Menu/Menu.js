@@ -10,7 +10,7 @@ class Menu extends Component{
             <div>
                 
             {/* <Backdrop click={()=>console.log("clicked")}/> */}
-            <Menuheader menudata={this.props.menudata} data={this.props.data} adding={this.props.adding()}>
+            <Menuheader menudata={this.props.menudata} adding={this.props.adding()}>
                     
             <Toolbar count={this.props.inbox} />
             </Menuheader> 

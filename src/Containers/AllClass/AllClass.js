@@ -46,22 +46,24 @@ class allClass extends Component{
       removeItem=(obj)=>{
         var copy=[...this.state.item];
         var check=false;
-        let pos=-1;
+        //let pos=-1;
+        let pos=0;
         copy.forEach(element=>{
             
             if(element.head===obj.head && element.counter>=1 ){
                 element.counter=element.counter-1;
                 check=true;
             }
+            if(check){
+                check=false;
+                if(element.counter===0){
+                    copy.splice(pos, 1)
+                    //copy=copy.slice(0,pos).concat(copy.slice(pos+1));
+                    
+                }
+            }
             pos+=1;
         });
-        if(check){
-            
-            if(copy[pos].counter===0){
-                copy=copy.slice(0,pos).concat(copy.slice(pos+1));
-                
-            }
-        }
         this.setState({item:copy});
         
       }
@@ -73,9 +75,9 @@ class allClass extends Component{
             <Switch>
                 <Route path="/offers" component={()=><Offer count={this.state.item.length} data={this.state.data.offers.offer} board={this.state.data.offers.board}/>}/>
    <Route path="/cart" component={()=><Cart adding={()=>this.addItem} remove={()=>this.removeItem} data={this.state.item}/> }/>
-   <Route path="/menu" component={()=><Menu inbox={this.state.item.length} data={this.state.data.menu} menudata={this.state.menudata} loaded={this.state.loaded} adding={()=>this.addItem}/>}/>
+   <Route path="/menu" component={()=><Menu inbox={this.state.item.length} menudata={this.state.menudata} loaded={this.state.loaded} adding={()=>this.addItem}/>}/>
    <Route path="/order" component={()=><Order count={this.state.item.length} data={this.state.item}/>}/>
-   <Route path="/login" component={()=><Login count={this.state.item.length} data={this.state.item}/>}/>
+   <Route path="/login" component={()=><Login count={this.state.item.length}/>}/>
    <Route path="/" component={()=><Home count={this.state.item.length} data={this.state.data.offers.home}/>}/>
    
    </Switch>
