@@ -4,8 +4,11 @@ import Inoption from './inOption/inOption';
 import {Container,Row,Col} from 'reactstrap';
 let toShow=[];
 const inOptions =(props)=>{
+
     if(props.data!==undefined && props.data!==null){
         
+        console.log(props.data);
+
         toShow=Object.keys(props.data).map(id=>{
             let cnt=props.data[id].description!==undefined?props.data[id].description:null;
             let img=props.data[id].imgPath!==undefined?props.data[id].imgPath:"https://media.timeout.com/images/103462914/image.jpg";
