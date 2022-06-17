@@ -5,38 +5,38 @@ import {Container,Row,Col} from 'reactstrap';
 class  orderForm extends Component{
     state={
         name:"",
-        phone:"",
-        houseNumber:"",
-        locality:"",
-        pincode:"",
-        landmark:""
+        zipCode:"",
+        address1:"",
+        city:"",
+        state:"",
+        address2:""
     }
     nameHandler=(e)=>{
         this.setState({name:e.target.value});
     }
     phoneHandler=(e)=>{
-        this.setState({phone:e.target.value});
+        this.setState({zipCode:e.target.value});
     }
     houseHandler=(e)=>{
-        this.setState({houseNumber:e.target.value});
+        this.setState({address1:e.target.value});
     }
     localityHandler=(e)=>{
-        this.setState({locality:e.target.value});
+        this.setState({address2:e.target.value});
     }
     pincodeHandler=(e)=>{
-        this.setState({pincode:e.target.value});
+        this.setState({state:e.target.value});
     }
     landHandler=(e)=>{
-        this.setState({landmark:e.target.value});
+        this.setState({city:e.target.value});
     }
     render(){
         var checkOut={
             name:this.state.name,
-            phone:this.state.number,
-            houseNumber:this.state.houseNumber,
-            locality:this.state.locality,
-            landmark:this.state.landmark,
-            pincode:this.state.pincode
+            zipCode:this.state.zipCode,
+            address1:this.state.address1,
+            address2:this.state.address2,
+            city:this.state.city,
+            state:this.state.state
         };
         return(
         <div className="OrderForm">
@@ -51,7 +51,7 @@ class  orderForm extends Component{
                             </legend>
                         </Col>
                         <Col xs="8" xl="8">
-                        <input type="text" value={this.state.name} onChange={this.nameHandler} id="CustomerName"/>
+                        <input type="text" value={this.state.name} onChange={this.nameHandler} required id="CustomerName"/>
                         </Col>
                     </Row>
                     <Row>
@@ -61,7 +61,7 @@ class  orderForm extends Component{
                             </legend>
                         </Col>
                         <Col xs="8" xl="8">
-                        <input type="text" value={this.state.houseNumber} onChange={this.houseHandler} id="HouseNumber"/>
+                        <input type="text" value={this.state.address1} onChange={this.houseHandler} required id="HouseNumber"/>
                         </Col>
                     </Row>
                     <Row>
@@ -71,7 +71,7 @@ class  orderForm extends Component{
                             </legend>
                         </Col>
                         <Col xs="8" xl="8">
-                        <input type="text" value={this.state.locality} onChange={this.localityHandler} id="Locality"/>
+                        <input type="text" value={this.state.address2} onChange={this.localityHandler} required id="Locality"/>
                         </Col>
                     </Row>
                     <Row>
@@ -81,7 +81,7 @@ class  orderForm extends Component{
                             </legend>
                         </Col>
                         <Col xs="8" xl="8">
-                        <input type="text" value={this.state.landmark} onChange={this.landHandler} id="LandMark"/>
+                        <input type="text" value={this.state.city} onChange={this.landHandler} required id="LandMark"/>
                         </Col>
                     </Row>
                     <Row>
@@ -91,7 +91,7 @@ class  orderForm extends Component{
                             </legend>
                         </Col>
                         <Col xs="8" xl="8">
-                        <input type="text" value={this.state.pincode} onChange={this.pincodeHandler} id="PinCode"/>
+                        <input type="text" value={this.state.state} onChange={this.pincodeHandler} required id="PinCode"/>
                         </Col>
                     </Row>
                     <Row>
@@ -101,7 +101,7 @@ class  orderForm extends Component{
                             </legend>
                         </Col>
                         <Col xs="8" xl="8">
-                        <input type="text" value={this.state.phone} onChange={this.phoneHandler} id="Number"/>
+                        <input type="text" value={this.state.zipCode} onChange={this.phoneHandler} required id="Number"/>
                         </Col>
                     </Row>
                 </Container>

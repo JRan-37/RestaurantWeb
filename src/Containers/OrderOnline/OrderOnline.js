@@ -23,11 +23,23 @@ class OrderOnline extends Component {
             let menuItems = [];
             filteredCart.map(item => menuItems.push(item.id));
 
+            console.log(obj);
+
+            let address = {
+                name : obj.checkOut.name,
+                address1 : obj.checkOut.address1,
+                address2 : obj.checkOut.address2,
+                city : obj.checkOut.city,
+                state : obj.checkOut.state,
+                zipCode : obj.checkOut.zipCode
+            }
+
             let copy = {
                 date : month + "/" + day + "/" + year,
                 price : total,
                 username : JSON.parse(localStorage.getItem("user")).username,
-                menuIds : menuItems
+                menuIds : menuItems,
+                address : address
             }
 
             console.log(copy);
