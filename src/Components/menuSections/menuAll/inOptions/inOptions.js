@@ -17,6 +17,7 @@ const inOptions =(props)=>{
            </Col>
             )
            }
+           
         })
     }
     return(

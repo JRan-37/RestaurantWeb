@@ -1,7 +1,5 @@
 import React from 'react';
 import './tile.css';
-import Button from '../../../buttons/grab-offer/grab-btn';
-
 const tile=(props)=>{
     let classnm=["tile"];
     switch(props.back){

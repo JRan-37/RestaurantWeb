@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
 import './Offer.css';
 import Toolbar from '../../Components/navigation/toolbar/toolbar';
-import { NavLink } from 'react-router-dom';
 import { Container, Row, Col } from 'reactstrap';
 import Tile from '../../Components/sections/section-tiles/tile/tile';
-import Flip from '../../Components/miscelleous/flip-card/flip-card';
 import Footer from '../../Components/navigation/footer/footer';
 import axios from 'axios';
-import Login from '../Login/Login';
-
 class Offer extends Component {
 
     state = {

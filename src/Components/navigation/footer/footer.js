@@ -6,7 +6,6 @@ import insta from '../../../Assests/icons/footer/insta.png';
 import wordpress from '../../../Assests/icons/footer/word.png';
 import google from '../../../Assests/icons/footer/google.png';
 import tweet from '../../../Assests/icons/footer/tweet.png';
-import heart from '../../../Assests/icons/footer/heart.png';
 const footer = () => {
     return (
         <footer id="footer" className="footer">

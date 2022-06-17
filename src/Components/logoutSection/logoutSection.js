@@ -1,7 +1,5 @@
 import React,{Component} from 'react';
 import './logoutSection.css';
-import {Container,Row,Col} from 'reactstrap';
-
 class  orderForm extends Component{
     render(){
         return(

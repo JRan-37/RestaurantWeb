@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import './Account.css';
-
-import axios from 'axios';
 import Toolbar from '../../Components/navigation/toolbar/toolbar';
-import { NavLink, Redirect } from 'react-router-dom';
-import Items from '../../Components/Order/Items/Items';
 import AccountInfo from '../../Components/accountInfo/accountInfo';
 import Logout from '../../Components/logoutSection/logoutSection';
 import Footer from '../../Components/navigation/footer/footer';

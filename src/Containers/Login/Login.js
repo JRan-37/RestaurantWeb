@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import './Login.css';
-
 import axios from 'axios';
 import Toolbar from '../../Components/navigation/toolbar/toolbar';
-import { NavLink } from 'react-router-dom';
-import Items from '../../Components/Order/Items/Items';
 import Form from '../../Components/loginform/loginForm';
 import Register from '../../Components/registerform/registerForm';
 import Footer from '../../Components/navigation/footer/footer';
@@ -18,7 +15,7 @@ class Login extends Component {
         axios.post("http://localhost:8080/authenticate", user).then(response => {
             localStorage.setItem("user", JSON.stringify(response.data));
             localStorage.setItem("signedIn", "true");
-            alert(localStorage.getItem("user"));
+            alert("Login Successful, JWT Token: " + JSON.parse(localStorage.getItem("user")).token);
             window.location.href='/';
         }).catch(err=>alert("Invalid Login Information"));
 
@@ -34,7 +31,6 @@ class Login extends Component {
         };
 
         axios.post("http://localhost:8080/register", user).then(response => {
-            let message = response.data.message;
             alert("Account Created");
         });
 
