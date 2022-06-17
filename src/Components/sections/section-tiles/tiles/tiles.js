@@ -11,7 +11,7 @@ const tiles=(props)=>{
     return(
     <Container>
         <Row>
-        {temp.map(offer=><Col key={offer.head}><Tile head={offer.head} url="/offers" button="See More" key={offer.head} content={offer.content} back={offer.back} /></Col>)}
+        {temp.map(offer=><Col key={offer.head}><Tile head={offer.head} url="/menu" button="See More" key={offer.head} content={offer.content} back={offer.back} /></Col>)}
         </Row>
     </Container>
     );

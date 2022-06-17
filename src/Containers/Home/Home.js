@@ -24,7 +24,7 @@ class Home extends Component{
     render(){
         return(
             <div>
-            <Header data={this.props.data}>
+            <Header>
             <Toolbar count={this.props.count}/>
             </Header>
             </div>

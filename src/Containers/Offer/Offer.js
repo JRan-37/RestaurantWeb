@@ -40,12 +40,6 @@ class Offer extends Component {
             window.location.href='/';
         } else {
 
-
-            let temp;
-            const extractor = (obj) => {
-                temp = Object.keys(obj).map(name => obj[name]);
-            }
-            extractor(this.props.data.cards);
             return (
                 <div className="Offer">
                     <section className="Offers">

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './section.css';
 import Brand from '../../miscelleous/brand/brand';
 import GrabBtn from '../../buttons/grab-offer/grab-btn';
-import Tiles from '../section-tiles/tiles/tiles';
 import Specs from '../section-specs/specs';
 import SpecOffer from '../spec-offer/specOffer';
 import Stacked from '../stacked-photos/stacked';
@@ -48,7 +47,7 @@ class section1 extends Component {
                     {this.props.children}
                     {back}
                     <div className="button-offer">
-                        <GrabBtn url="/offers" content="Grab Offer" />
+                        <GrabBtn url="/menu" content="See Menu" />
                     </div>
                     <div className="controls">
                         <div className="internal-c">
@@ -58,15 +57,11 @@ class section1 extends Component {
                         </div>
                     </div>
                 </section>
-                <section className="sec-tiles">
-
-                    <Tiles data={this.props.data.cards} />
-                </section>
                 <section className="specs">
                     <Specs />
                 </section>
                 <section className="specOffer">
-                    <SpecOffer data={this.props.data.mainoffer} />
+                    <SpecOffer />
                 </section>
                 <section className="sec-stacked">
                     <Stacked />

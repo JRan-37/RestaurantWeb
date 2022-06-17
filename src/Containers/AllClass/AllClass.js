@@ -13,18 +13,13 @@ import Account from '../Account/Account';
 class allClass extends Component{
     state={
         item:[],
-        data:[],
         menudata:[],
         loaded:false
       };
       componentDidMount(){
-        axios.get("https://twobrother0927.firebaseio.com/.json").then((data)=>{
-            this.setState({data:data.data,loaded:true});
-            console.log(this.data);
-        }).catch(err=>console.log("Some Error")).then(console.log("Lets trye this "));
         axios.get("http://localhost:8080/api/menu").then((response)=>{
-            this.setState({menudata:response.data});
-        }).catch(err=>console.log("Didn't load")).then(console.log("Unable to get data for menu"));
+            this.setState({menudata:response.data,loaded:true});
+        }).catch(err=>console.log("Couldn't load menu data"));
       }
       addItem=(obj)=>{
           let extra=[...this.state.item];
@@ -74,13 +69,13 @@ class allClass extends Component{
         const ddt=this.state.loaded?(
             <div>
             <Switch>
-                <Route path="/rewards" component={()=><Offer count={this.state.item.length} data={this.state.data.offers.offer} board={this.state.data.offers.board}/>}/>
+                <Route path="/rewards" component={()=><Offer count={this.state.item.length}/>}/>
    <Route path="/cart" component={()=><Cart adding={()=>this.addItem} remove={()=>this.removeItem} data={this.state.item}/> }/>
    <Route path="/menu" component={()=><Menu inbox={this.state.item.length} menudata={this.state.menudata} loaded={this.state.loaded} adding={()=>this.addItem}/>}/>
    <Route path="/order" component={()=><Order count={this.state.item.length} data={this.state.item}/>}/>
    <Route path="/login" component={()=><Login count={this.state.item.length}/>}/>
    <Route path="/account" component={()=><Account count={this.state.item.length}/>}/>
-   <Route path="/" component={()=><Home count={this.state.item.length} data={this.state.data.offers.home}/>}/>
+   <Route path="/" component={()=><Home count={this.state.item.length}/>}/>
    
    </Switch>
        </div>
