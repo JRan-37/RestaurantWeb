@@ -6,12 +6,12 @@ const specOffer=(props)=>{
     return(
         <div className="specOffer">
         <div className="offerArrange">
-            <p className="offerHead">{props.data.title}</p>
-            <p className="offerContent">{props.data.content}</p>
+            <p className="offerHead">AUTHENTIC ITALIAN DISHES</p>
+            <p className="offerContent">Free Drinks From Tap With purchase</p>
             <p className="offerStarting">starting at </p>
-             <p className="offerDigit">&#x20B9; {props.data.price}</p>
+             <p className="offerDigit">$1.99</p>
              <div className="offerButton">
-                 <Button url="/offers" content="Visit Offers"/>
+                 <Button url="/menu" content="See Menu"/>
              </div>
             </div>
         </div>

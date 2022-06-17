@@ -11,16 +11,16 @@ const specs=()=>{
         <Container>
             <Row>
                 <Col>
-                    <Spec src={basket} head="100% organic" content="Our chef start prepairing order as soon as you place it, while we keep engines hot for your delivery.Therefore we deliver food hot and at our fastest so you can enjoy every meal with your loved one on time." />
+                    <Spec src={basket} head="100% organic" content="Only fresh ingredients used in all dishes, sourced directly from local farms." />
                 </Col>
                 <Col>
-                    <Spec src={clock} head="fast delivery" content="Our chef start prepairing order as soon as you place it, while we keep engines hot for your delivery.Therefore we deliver food hot and at our fastest so you can enjoy every meal with your loved one on time."/>
+                    <Spec src={clock} head="Fast Delivery" content="Our delivery drivers have plenty of experience outrunning even the police. Your order will arrive faster than an ambulance."/>
                 </Col>
                 <Col>
-                 <Spec src={leaf} head="cleanness" content="Our chef start prepairing order as soon as you place it, while we keep engines hot for your delivery.Therefore we deliver food hot and at our fastest so you can enjoy every meal with your loved one on time."/>
+                 <Spec src={leaf} head="Efficiency" content="Our chefs use quantum computing and time crystals to begin preparing your order before you even request it."/>
                 </Col>
                 <Col>
-                 <Spec src={chef} head="Experienced Chef" content="Our chef start prepairing order as soon as you place it, while we keep engines hot for your delivery.Therefore we deliver food hot and at our fastest so you can enjoy every meal with your loved one on time."/>
+                 <Spec src={chef} head="Experienced Chefs" content="Chefs are trained to physically withstand temperatures of up to 3000°F, allowing them to be present in the oven along with your order to ensure perfection."/>
                 </Col>
             </Row>
         </Container>

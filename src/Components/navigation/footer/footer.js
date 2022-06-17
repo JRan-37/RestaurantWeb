@@ -25,7 +25,7 @@ const footer = () => {
                 <Row>
                     <Col>
                         <p className="footer-text">Contact: (123) 456-7890<br />
-                            &copy; COPYRIGHT 2018 reserved by 2 Brother Pizza and Burger<br /><br/>
+                            &copy; COPYRIGHT 2022 reserved by M. Brothers<br /><br/>
                             </p>
                     </Col>
                 </Row>
