@@ -25,13 +25,13 @@ class Offer extends Component {
         }
 
         try {
-            this.setState({username:JSON.parse(localStorage.getItem("user")).username});
+            user.username = JSON.parse(localStorage.getItem("user")).username;
         } catch (error) {
             
         }
 
         axios.post("http://localhost:8080/rewards", user).then((response) => this.setState({ rewardData: response.data }));
-        console.log(this.rewardData);
+        console.log("reward data" + this.rewardData);
     }
 
     render() {
