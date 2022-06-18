@@ -59,7 +59,8 @@ class orderForm extends Component {
 
     }
 
-    render() {
+    buttonOnSubmit = () => {
+
         var checkOut = {
             name: this.state.name,
             zipCode: this.state.zipCode,
@@ -68,6 +69,20 @@ class orderForm extends Component {
             city: this.state.city,
             state: this.state.state
         };
+
+        this.setState({
+            name : "",
+            address1 : "",
+            address2 : "",
+            city : "",
+            state : "",
+            zipCode : ""
+        });
+
+        this.props.place({ checkOut });
+    }
+
+    render() {
 
 
         return (
@@ -151,7 +166,7 @@ class orderForm extends Component {
                             </Row>
                         </Container>
                     </div>
-                    <button type="button" onClick={() => this.props.place({ checkOut })}>Place Order</button>
+                    <button type="button" onClick={() => this.buttonOnSubmit()}>Place Order</button>
                 </form>
 
                 <p className="OrderFormNotice">*Payment will be takes as Cash On delivery</p>

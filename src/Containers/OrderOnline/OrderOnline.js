@@ -42,7 +42,6 @@ class OrderOnline extends Component {
                 address : address
             }
 
-            console.log(copy);
             
             if (filteredCart.length > 0) {
                 axios.post("http://localhost:8080/purchase", copy).then(()=>alert("Your Order is Placed!"));
@@ -50,6 +49,8 @@ class OrderOnline extends Component {
             else {
                 alert("Please select some items from Menu first");
             }
+
+            window.location.reload();
         }
 
 
